@@ -1,0 +1,16 @@
+[
+  { "name": "John Smith", "email": "john.smith@example.com", "age": 25 },
+
+  { "name": "", "email": "valid@example.com", "age": 22 },
+  { "name": "A", "email": "valid@example.com", "age": 22 },
+  { "name": "ThisNameIsWayTooLongThisNameIsWayTooLongThisNameIsWayTooLongThisNameIsWayTooLong", "email": "valid@example.com", "age": 22 },
+
+  { "name": "Valid Name", "email": "", "age": 22 },
+  { "name": "Valid Name", "email": "test@", "age": 22 },
+  { "name": "Valid Name", "email": "no-at-symbol.com", "age": 22 },
+
+  { "name": "Valid Name", "email": "valid@example.com", "age": -1 },
+  { "name": "Valid Name", "email": "valid@example.com", "age": 999 },
+
+  { "name": "Jane Doe", "email": "jane.doe@example.com", "age": 31 }
+]
