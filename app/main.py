@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+from datetime import datetime 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -51,3 +52,12 @@ app.include_router(week4_router)
 @app.get("/")
 def root():
     return {"message": "Online Booking Backend Running"}
+
+
+@app.get("/healthz")
+def healthz():
+    return {
+        "status": "ok",
+        "version": "1.0",
+        "time": datetime.utcnow().isoformat()
+    } 
