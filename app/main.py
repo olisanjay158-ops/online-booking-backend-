@@ -18,8 +18,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://online-booking-frontend.vercel.app",
-        "https://online-booking-frontend-gvaayfkkb-olisanjay158-ops-projects.vercel.app",
+        "https://genzbooking.vercel.app",
+        "https://online-booking-frontend.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
