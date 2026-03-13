@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from datetime import datetime 
+from datetime import datetime
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -12,19 +12,21 @@ from app.week4_validation import router as week4_router
 
 app = FastAPI(title="Online Booking Backend", debug=True)
 
-# CORS (needed for frontend UI like Next.js)
+# CORS (needed for frontend UI like Next.js / Vercel)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://online-booking-frontend.vercel.app",
+        "https://online-booking-frontend-gvaayfkkb-olisanjay158-ops-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ✅ Week 4: force structured validation errors + HTTP 400
+# Week 4: force structured validation errors + HTTP 400
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     errors = []
@@ -60,4 +62,4 @@ def healthz():
         "status": "ok",
         "version": "1.0",
         "time": datetime.utcnow().isoformat()
-    } 
+    }
